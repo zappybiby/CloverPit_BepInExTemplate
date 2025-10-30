@@ -5,15 +5,21 @@
     <!-- <CloverPit_GameRootDir></CloverPit_GameRootDir> -->
     <!-- Set if your BepInEx/plugins/ directory isn't in the game files. -->
     <!-- <CloverPit_PluginsDir></CloverPit_PluginsDir> -->
+    <ThunderstoreNamespace Condition="'$(ThunderstoreNamespace)' == ''">_ts-team_</ThunderstoreNamespace>
+    <ThunderstorePackageName Condition="'$(ThunderstorePackageName)' == ''">BepInExModTemplate</ThunderstorePackageName>
+    <ThunderstorePackageFolder Condition="'$(ThunderstorePackageFolder)' == ''">$(ThunderstoreNamespace)-$(ThunderstorePackageName)</ThunderstorePackageFolder>
+    <ThunderstoreDeploymentDir Condition="'$(ThunderstoreDeploymentDir)' == ''">$([System.IO.Path]::Combine('$(CloverPit_PluginsDir)', '$(ThunderstorePackageFolder)'))</ThunderstoreDeploymentDir>
+    <ThunderstoreDeploymentPath Condition="'$(ThunderstoreDeploymentPath)' == ''">$([System.IO.Path]::Combine('$(ThunderstoreDeploymentDir)', '$(AssemblyName).dll'))</ThunderstoreDeploymentPath>
   </PropertyGroup>
 
   <Target Name="DeployFiles" AfterTargets="Build">
-    <Message Text="Deploy → $(CloverPit_PluginsDir)$(AssemblyName).dll" Importance="High" />
+    <Message Text="Deploy → $(ThunderstoreDeploymentPath)" Importance="High" />
     <Error
       Text="Plugins directory '$([MSBuild]::NormalizeDirectory($(CloverPit_PluginsDir)))' doesn't exist! Configure CloverPit_PluginsDir to point to a valid path in the Config.Build.user.props file."
       Condition="!Exists('$(CloverPit_PluginsDir)')"
     />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(CloverPit_PluginsDir)" />
+    <MakeDir Directories="$(ThunderstoreDeploymentDir)" Condition="!Exists('$(ThunderstoreDeploymentDir)')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ThunderstoreDeploymentPath)" />
   </Target>
 
 </Project>

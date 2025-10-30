@@ -21,7 +21,7 @@ outdir = "../../artifacts/thunderstore/"
 
 [[build.copy]]
 source = "../../artifacts/bin/BepInExModTemplate/release/_Guid_.dll"
-target = "plugins/"
+target = "BepInEx/plugins/_ts-team_-BepInExModTemplate/"
 
 [[build.copy]]
 source = "../../CHANGELOG.md"
