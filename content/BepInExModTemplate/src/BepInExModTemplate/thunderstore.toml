@@ -12,6 +12,7 @@ websiteUrl = "" # TODO: Add a link to your mod repository here (optional)
 containsNsfwContent = false
 
 [package.dependencies]
+# Mods listed here become runtime dependencies on Thunderstore and are auto-installed by mod managers.
 BepInEx-BepInExPack = "5.4.2403"
 
 [build]

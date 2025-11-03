@@ -135,6 +135,27 @@ You can also directly publish to Thunderstore by including `-property:PublishTS=
 > [!NOTE]
 > For publishing to Thunderstore, you need a Thunderstore API token. The publishing to Thunderstore option is intended to be used via automated GitHub actions workflows, so you don't need to worry about it.
 
+### Referencing Thunderstore Mods
+
+- Add the dependency to your `.csproj` project file so your code can use it:
+
+  ```xml
+  <ItemGroup>
+    <PackageReference Include="Team-ModName" Version="1.2.3" Private="False" />
+  </ItemGroup>
+  ```
+
+  The template already points to the Thunderstore NuGet feed, so the toolkit will grab the dependencies for you.
+
+- Add the same entry to `thunderstore.toml` so Thunderstore and mod managers know to download it:
+
+  ```toml
+  [package.dependencies]
+  Team-ModName = "1.2.3"
+  ```
+
+- Use the same version number in both places. The project file is for your development setup, while `thunderstore.toml` tells Thunderstore what your mod needs.
+
 ### GitHub Actions Publishing
 
 Coming soon.

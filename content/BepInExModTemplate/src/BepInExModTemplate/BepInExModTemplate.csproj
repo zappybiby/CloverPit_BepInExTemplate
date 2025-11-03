@@ -45,14 +45,14 @@
     With this, you can simply depend on a Thunderstore package like so:
 
     <ItemGroup>
-      <PackageReference Include="ModTeam-ModName" Version="*" />
+      <PackageReference Include="ModTeam-ModName" Version="1.0.0" Private="False"/>
     </ItemGroup>
 
     This will cause the mod to be downloaded and its
     methods will be available at compile time for your code.
 
     Note that this does NOT mark the package as a dependency
-    for your Thunderstore package.
+    for your Thunderstore package. You need to add it to thunderstore.toml as well.
   -->
 
 <!--#endif -->
