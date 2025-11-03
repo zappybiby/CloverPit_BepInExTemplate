@@ -1,10 +1,15 @@
 <Project>
 
   <PropertyGroup>
-    <!-- Set if the default steam game install directory doesn't work. -->
+    <!-- Override if the game is not at C:\Program Files (x86)\Steam\steamapps\common\CloverPit -->
+    <!-- Example if on E drive: -->
+    <!-- <CloverPit_GameRootDir>E:\Program Files (x86)\Steam\steamapps\common\CloverPit</CloverPit_GameRootDir> -->
     <!-- <CloverPit_GameRootDir></CloverPit_GameRootDir> -->
-    <!-- Set if your BepInEx/plugins/ directory isn't in the game files. -->
+    
+    <!-- Override if BepInEx/plugins is not under the game directory (default local install). -->
+    <!-- Default for Bepinex installed through Thunderstore: C:\Users\<your-user>\AppData\Roaming\Thunderstore Mod Manager\DataFolder\CloverPit\profiles\Default\BepInEx\plugins -->
     <!-- <CloverPit_PluginsDir></CloverPit_PluginsDir> -->
+
     <ThunderstoreNamespace Condition="'$(ThunderstoreNamespace)' == ''">_ts-team_</ThunderstoreNamespace>
     <ThunderstorePackageName Condition="'$(ThunderstorePackageName)' == ''">BepInExModTemplate</ThunderstorePackageName>
     <ThunderstorePackageFolder Condition="'$(ThunderstorePackageFolder)' == ''">$(ThunderstoreNamespace)-$(ThunderstorePackageName)</ThunderstorePackageFolder>
