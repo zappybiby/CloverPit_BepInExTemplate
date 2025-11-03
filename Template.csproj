@@ -5,7 +5,7 @@
     <!-- Follow the instructions on
     https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
     <PackageId>zappybiby.CloverPitBepInExTemplate</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Title>CloverPit BepInEx Template</Title>
     <Authors>zappybiby</Authors>
     <Description>A BepInEx template for making mods for CloverPit</Description>
@@ -37,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="AGENTS.md" />
     <Content Include="content/**" Exclude="content/*/artifacts/**;content/*/Config.Build.user.props" />
     <Compile Remove="**/*" />
   </ItemGroup>
