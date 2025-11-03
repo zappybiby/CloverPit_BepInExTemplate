@@ -8,6 +8,7 @@
     - [Project Structure](#project-structure)
     - [Setting Up The Config File](#setting-up-the-config-file)
     - [Thunderstore Packaging](#thunderstore-packaging)
+    - [Referencing Thunderstore Mods](#referencing-thunderstore-mods)
     - [GitHub Actions Publishing](#github-actions-publishing)
 
 ## Installing
