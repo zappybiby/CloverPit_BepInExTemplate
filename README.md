@@ -63,7 +63,7 @@ Open a terminal in your CloverPit modding directory, and run:
 > You should [set up a Thunderstore team first](<https://thunderstore.io/settings/teams/create/>) so you can use its name in the optional `--ts-team` argument so the template can give you a mostly correctly configured packaging setup.
 
 ```sh
-dotnet new cloverpit_mod --output ModName --guid com.github.YourAccount.ModName --ts-team YourThunderstoreTeam
+dotnet new cloverpit_mod --output ModName --guid YourAccount.ModName --ts-team YourThunderstoreTeam
 ```
 
 > [!TIP]  
@@ -82,7 +82,7 @@ You now have a (mostly) working setup. See [Setting Up The Config File](#setting
 This example demonstrates what files should appear and where:
 
 ```sh
-~/Workspace/CloverPit$ dotnet new cloverpit_mod --output MyCoolMod --guid com.github.zappybiby.MyCoolMod --ts-team zappybiby
+~/Workspace/CloverPit$ dotnet new cloverpit_mod --output MyCoolMod --guid zappybiby.MyCoolMod --ts-team zappybiby
 The template "CloverPit BepInEx Plugin" was created successfully.
 
 ~/Workspace/CloverPit$ cd MyCoolMod/
